@@ -25,6 +25,10 @@ public class Bullet : MonoBehaviour
          {
              Destroy();
          }
+         var e = collider.GetComponent<Enemy_1>();
+         if(e != null){
+             PoolsManager.Instance.GetPool("EnemyPool").AddToPool(e.gameObject);
+         }
      }
         
     
