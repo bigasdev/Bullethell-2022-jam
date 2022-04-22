@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     public float xMin, xMax, yMin, yMax;
 
-
     public Transform shootSpawn;
     public GameObject bullet;
     public float fireRate;
@@ -20,7 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame

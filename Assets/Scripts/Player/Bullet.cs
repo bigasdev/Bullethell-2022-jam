@@ -25,15 +25,22 @@ public class Bullet : MonoBehaviour
          {
              Destroy();
          }
+         if(collider.gameObject.tag == "DestroyBullet")
+         {
+             Destroy();
+         }
          var e = collider.GetComponent<Enemy_1>();
          if(e != null)
          {
              PoolsManager.Instance.GetPool("EnemyPool").AddToPool(e.gameObject);
-         }    
-         if(e != null)
+         }       
+         var c = collider.GetComponent<Enemy_2>();
+         if(c != null)
          {
-             PoolsManager.Instance.GetPool("EnemyPool2").AddToPool(e.gameObject);    
-         }
+             PoolsManager.Instance.GetPool("EnemyPool2").AddToPool(c.gameObject);
+         }   
+     
      }
+
         
 }

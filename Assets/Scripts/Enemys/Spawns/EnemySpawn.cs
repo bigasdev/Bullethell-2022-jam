@@ -5,11 +5,7 @@ using BigasTools;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public float enemyDeath;
-
     public Transform enemySpawn;
-    public Transform enemySpawn2;
-    public Transform enemySpawn3;
 
     private float enemyRespawn;
     private Timer timer;
@@ -29,7 +25,5 @@ public class EnemySpawn : MonoBehaviour
     void SpawnEnemy()
     {
         PoolsManager.Instance.GetPool("EnemyPool").GetFromPool(enemySpawn.position);
-        PoolsManager.Instance.GetPool("EnemyPool").GetFromPool(enemySpawn2.position);
-        PoolsManager.Instance.GetPool("EnemyPool").GetFromPool(enemySpawn3.position);
     }
 }
