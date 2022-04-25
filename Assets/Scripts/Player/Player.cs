@@ -4,7 +4,11 @@ using UnityEngine;
 using BigasTools;
 
 public class Player : MonoBehaviour
-{
+{  
+
+    public int vidaAtual;
+    public int vidaMaxima;
+
     public float xMin, xMax, yMin, yMax;
 
     public Transform shootSpawn;
@@ -19,7 +23,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+       vidaAtual = vidaMaxima;
     }
 
     // Update is called once per frame
@@ -79,6 +83,15 @@ public class Player : MonoBehaviour
 
        speed = GameController.instance.totalSpeed;
 
+    }
+
+    public void ReceberDano()
+    {
+        vidaAtual -= 1;
+        if(vidaAtual <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     
 }

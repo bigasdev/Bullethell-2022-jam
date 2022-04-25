@@ -26,15 +26,14 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy();
         }
-        var e = collider.GetComponent<Player>();
-        if(e != null)
-        {
-            Destroy(collider.gameObject);
-        }
         var m = collider.GetComponent<Player>();
         if(m != null)
         {
             Destroy();
+        }
+        if(collider.gameObject.CompareTag("Player"))
+        {
+            collider.gameObject.GetComponent<Player>().ReceberDano();
         }
     }
 }
